@@ -1,4 +1,4 @@
-package currentTimeNtp
+package main
 
 import (
 	"fmt"
@@ -6,13 +6,12 @@ import (
 	"log"
 )
 
-func GetCurrentTimeNtp() {
-	host := "0.beevik-ntp.pool.ntp.org"
+func GetCurrentTimeNtp(host string) {
+
 	time, err := ntp.Time(host)
 
 	if err != nil {
 		log.Fatal("cant get time \n", err)
 	}
-
-	fmt.Printf("Current time: %v\n", time)
+	fmt.Printf("current time: %v\n", time)
 }
